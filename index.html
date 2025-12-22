@@ -43,12 +43,13 @@ body {
   position: relative;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  text-align: center;
-  padding: 2rem;
+  padding: 2rem 4rem;
+  gap: 4rem;
 }
 
 .hero::before {
@@ -114,7 +115,13 @@ body {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 1200px;
+  max-width: 700px;
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-title {
@@ -124,7 +131,7 @@ body {
   margin-bottom: 1rem;
   text-shadow: 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan), 0 0 60px var(--neon-cyan);
   animation: glow 2s ease-in-out infinite alternate;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
 }
 
 @keyframes glow {
@@ -169,6 +176,17 @@ body {
   51%, 100% { opacity: 0; }
 }
 
+.hero-bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
 .hero-tagline {
   font-size: clamp(1rem, 2vw, 1.3rem);
   max-width: 900px;
@@ -200,7 +218,69 @@ body {
   box-shadow: 0 0 40px var(--neon-cyan), 0 0 60px var(--neon-green);
 }
 
+.profile-image {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--neon-cyan);
+  box-shadow: 0 0 30px var(--neon-cyan), 0 0 60px var(--neon-magenta);
+  z-index: 3;
+  animation: profileGlow 3s ease-in-out infinite alternate;
+  flex-shrink: 0;
+  margin-top: -150px;
+  margin-left: 70px;
+}
 
+@keyframes profileGlow {
+  from {
+    box-shadow: 0 0 30px var(--neon-cyan), 0 0 60px var(--neon-magenta);
+  }
+  to {
+    box-shadow: 0 0 40px var(--neon-magenta), 0 0 80px var(--neon-purple);
+  }
+}
+
+@media (max-width: 968px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .hero-content {
+    text-align: center;
+  }
+  
+  .hero-tagline {
+    margin: 0 auto 3rem;
+  }
+  
+  .profile-image {
+    width: 200px;
+    height: 200px;
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 1.5rem;
+  }
+  
+  .profile-image {
+    width: 120px;
+    height: 120px;
+  }
+}
 
 /* Section Styles */
 section {
@@ -1074,9 +1154,12 @@ footer {
             <div class="particle" style="left: 80%; animation-duration: 21s;"></div>
         </div>
         <div class="hero-content">
-            <h1 class="hero-title">⚡ PREMKUMAR</h1>
+            <h1 class="hero-title">PREMKUMAR K</h1>
             <p class="hero-subtitle">Full-Stack &amp; AI Developer</p>
             <p class="typing-text" id="typingText"></p>
+        </div>
+        <img src="meeee.png" alt="Premkumar K" class="profile-image">
+        <div class="hero-bottom">
             <p class="hero-tagline">
                 I build intelligent systems that merge full-stack engineering with machine learning—creating solutions that think, adapt, and solve real-world challenges.
             </p>
@@ -1430,7 +1513,7 @@ footer {
                         <i class="fas fa-envelope"></i>
                         <div class="contact-text">
                             <div class="contact-label">Email</div>
-                            <div class="contact-value">premkumark2005@zohomail.in</div>
+                            <div class="contact-value">premkumaravel2005@gmail.com</div>
                         </div>
                     </div>
                     <div class="contact-item">
